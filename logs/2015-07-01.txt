@@ -1,0 +1,7 @@
+Time : 20:38:06
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.IDELEVE' in 'on clause'
+Raw SQL : SELECT e.*, a.* FROM eleves e INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.ANNEEACADEMIQUE = :anneeacad LEFT JOIN absences a ON a.IDELEVE = e.IDELEVE AND a.IDAPPEL = :idappel ORDER BY e.NOM
+
+Time : 19:16:48
+SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'idclasse' in where clause is ambiguous
+Raw SQL : SELECT a.*, c.*, n.*, m.*, e.* FROM `appels` a LEFT JOIN classes c ON c.IDCLASSE = a.IDCLASSE LEFT JOIN niveau n ON c.NIVEAU = n.IDNIVEAU LEFT JOIN matieres m ON m.IDMATIERE = a.IDMATIERE LEFT JOIN emplois e ON e.IDEMPLOIS = a.IDEMPLOIS WHERE  idclasse = :idclasse AND  idmatiere = :idmatiere AND  datejour = :datejour AND  idemplois = :idemplois 

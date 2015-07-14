@@ -1,0 +1,23 @@
+Time : 21:31:22
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'locan.matiere' doesn't exist
+Raw SQL : SELECT e.*, m.* FROM emplois e LEFT JOIN enseignements ee ON ee.CLASSE = :classe AND ee.IDENSEIGNEMENT = e.IDENSEIGNEMENT LEFT JOIN matiere m ON m.IDMATIERE = ee.MATIERE WHERE e.JOUR = :jour
+
+Time : 21:30:37
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'locan.matiere' doesn't exist
+Raw SQL : SELECT e.*, m.* FROM emplois e LEFT JOIN enseignements ee ON ee.CLASSE = :classe AND ee.IDENSEIGNEMENT = e.IDENSEIGNEMENT LEFT JOIN matiere m ON m.IDMATIERE = ee.MATIERE WHERE e.JOUR = :jour
+
+Time : 17:24:37
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`emplois`, CONSTRAINT `emplois_ibfk_1` FOREIGN KEY (`IDENSEIGNEMENT`) REFERENCES `enseignements` (`IDENSEIGNEMENT`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  emplois( JOUR, IDENSEIGNEMENT, HEUREDEBUT, HEUREFIN) VALUES(:jour,:idenseignement,:heuredebut,:heurefin)
+
+Time : 08:40:41
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ee.IDMATIERE' in 'on clause'
+Raw SQL : SELECT e.*, m.*, p.* FROM emplois e LEFT JOIN enseignements ee ON ee.CLASSE = :idclasse AND ee.IDENSEIGNEMENT = e.IDENSEIGNEMENT LEFT JOIN matieres m ON m.IDMATIERE = ee.IDMATIERE LEFT JOIN personnels p ON p.IDPERSONNEL = ee.PROFESSEUR ORDER BY e.HEUREDEBUT
+
+Time : 08:40:06
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ee.IDCLASSE' in 'on clause'
+Raw SQL : SELECT e.*, m.*, p.* FROM emplois e LEFT JOIN enseignements ee ON ee.IDCLASSE = :idclasse AND ee.IDENSEIGNEMENT = e.IDENSEIGNEMENT LEFT JOIN matieres m ON m.IDMATIERE = ee.IDMATIERE LEFT JOIN personnels p ON p.IDPERSONNEL = ee.PROFESSEUR ORDER BY e.HEUREDEBUT
+
+Time : 08:39:39
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'locan.matiere' doesn't exist
+Raw SQL : SELECT e.*, m.*, p.* FROM emplois e LEFT JOIN enseignements ee ON ee.IDCLASSE = :idclasse AND ee.IDENSEIGNEMENT = e.IDENSEIGNEMENT LEFT JOIN matiere m ON m.IDMATIERE = ee.IDMATIERE LEFT JOIN personnesl p ON p.IDPERSONNEL = ee.PROFESSEUR ORDER BY e.HEUREDEBUT

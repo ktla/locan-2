@@ -1,0 +1,35 @@
+Time : 23:22:30
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.SEQUENCEcecer' in 'on clause'
+Raw SQL : SELECT n.*, e.*, tn.*, s.*, s.LIBELLE AS SEQUENCELIBELLE, c.*, c.LIBELLE AS CLASSELIBELLE, m.LIBELLE AS MATIERELIBELLE FROM `notations` n LEFT JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT LEFT JOIN matieres m ON m.IDMATIERE = e.MATIERE LEFT JOIN classes c ON c.IDCLASSE = e.CLASSE LEFT JOIN type_notes tn ON tn.IDTYPENOTE = n.TYPENOTE LEFT JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCEcecer
+
+Time : 22:08:35
+SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'n'
+Raw SQL : SELECT n.*, e.*, tn.*, s.*, s.LIBELLE AS SEQUENCELIBELLE, c.LIBELLE AS CLASSELIBELLE, m.LIBELLE AS MATIERELIBELLE FROM `notations` nINNER JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT INNER JOIN matieres m ON m.IDMATIERE = e.MATIERE INNER JOIN classes c ON c.IDCLASSE = e.CLASSE INNER JOIN type_notes tn ON tn.IDTYPENOTE = n.TYPENOTE INNER JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE WHERE  IDNOTATION = :IDNOTATION 
+
+Time : 19:33:10
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ENSEIGNEMENT' in 'where clause'
+Raw SQL : SELECT n.*, el.*, en.*, tn.*, s.* FROM `notes` n LEFT JOIN eleves el ON el.IDELEVE = n.ELEVE LEFT JOIN enseignements en ON en.IDENSEIGNEMENT = n.ENSEIGNEMENT LEFT JOIN type_notes tn ON tn.IDTYPENOTE = n.TYPENOTE LEFT JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE WHERE  ENSEIGNEMENT = :ENSEIGNEMENT AND  TYPENOTE = :TYPENOTE AND  sequence = :sequence
+
+Time : 18:43:24
+SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'n'
+Raw SQL : SELECT n.*, el.*, en.*, tn.*, s.* FROM `notes` LEFT JOIN eleves el ON el.IDELEVE = n.ELEVE LEFT JOIN enseignements en ON en.IDENSEIGNEMENT = n.ENSEIGNEMENT LEFT JOIN type_notes tn ON tn.IDTYPENOTE = n.TYPENOTE LEFT JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE WHERE  ENSEIGNEMENT = :ENSEIGNEMENT AND  TYPENOTE = :TYPENOTE AND  sequence = :sequence
+
+Time : 18:12:22
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( NOTE, ELEVE, ENSEIGNEMENT, TYPENOTE, ABSENT, SEQUENCE, OBSERVATION) VALUES(?,?' at line 1
+Raw SQL : INSERT INTO  ( NOTE, ELEVE, ENSEIGNEMENT, TYPENOTE, ABSENT, SEQUENCE, OBSERVATION) VALUES(:note,:eleve,:enseignement,:typenote,:absent,:sequence,:observation)
+
+Time : 18:09:05
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '( NOTE, ELEVE, ENSEIGNEMENT, TYPENOTE, ABSENT, SEQUENCE, OBSERVATION) VALUES(?,?' at line 1
+Raw SQL : INSERT INTO  ( NOTE, ELEVE, ENSEIGNEMENT, TYPENOTE, ABSENT, SEQUENCE, OBSERVATION) VALUES(:note,:eleve,:enseignement,:typenote,:absent,:sequence,:observation)
+
+Time : 00:59:09
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.TRIMESTRE' in 'on clause'
+Raw SQL : SELECT s.* FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.ANNEEACADEMIQUE = :anneeacad
+
+Time : 00:58:54
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.IDTRIMESTRE' in 'on clause'
+Raw SQL : SELECT s.* FROM sequences s INNER JOIN trimestres t ON s.IDTRIMESTRE = t.TRIMESTRE AND t.ANNEEACADEMIQUE = :anneeacad
+
+Time : 00:58:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INNER JOIN trimestres t ON s.IDTRIMESTRE = t.TRIMESTRE AND t.ANNEEACADEMIQUE = ?' at line 1
+Raw SQL : SELECT s.* INNER JOIN trimestres t ON s.IDTRIMESTRE = t.TRIMESTRE AND t.ANNEEACADEMIQUE = :anneeacad

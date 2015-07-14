@@ -1,0 +1,15 @@
+Time : 11:47:22
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`justifications`, CONSTRAINT `justifications_ibfk_1` FOREIGN KEY (`REALISERPAR`) REFERENCES `personnels` (`IDPERSONNEL`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  justifications( MOTIF, DESCRIPTION, DATEJOUR, REALISERPAR) VALUES(:motif,:description,:datejour,:realiserpar)
+
+Time : 10:26:22
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`absences' a INNER JOIN appels ap ON ap.IDAPPEL = a.APPEL INNER JOIN eleves e ON' at line 1
+Raw SQL : SELECT a.*, ap.*, e.*, j.* FROM `absences' a INNER JOIN appels ap ON ap.IDAPPEL = a.APPEL INNER JOIN eleves e ON e.IDELEVE = a.ELEVE LEFT JOIN justifications j ON j.IDJUSTIFICATION = a.JUSTIFIER WHERE  IDABSENCE = :IDABSENCE 
+
+Time : 10:21:11
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.USER' in 'on clause'
+Raw SQL : SELECT j.*, p.* FROM `justifications` j INNER JOIN users u ON u.LOGIN = j.REALISERPAR INNER JOIN personnels p ON p.USER = u.IDUSER WHERE  IDJUSTIFICATION = :IDJUSTIFICATION 
+
+Time : 10:20:52
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.USER' in 'on clause'
+Raw SQL : SELECT j.*, p.* FROM `justifications` j INNER JOIN users u ON u.LOGIN = j.REALISERPAR INNER JOIN personnels p ON p.USER = u.IDUSER WHERE  IDJUSTIFICATION = :IDJUSTIFICATION 

@@ -1,0 +1,71 @@
+Time : 21:33:15
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE i.IDCLASSE = ?' at line 1
+Raw SQL : SELECT COUNT(i.IDINSCRIPTION) AS NBRE FROM inscription i INNER JOIN classes c ON c.IDCLASSE = i.IDCLASSE INNER JOIN niveau n ON c.NIVEAU = n.IDNIVEAU WHERE i.IDELEVE = :ideleve AND i.IDCLASSE IN (SELECT c2.IDCLASSE FROM classes c2 INNER JOIN niveau n2 ON n2.IDNIVEAU = c2.NIVEAU WHERE n2.GROUPE = n.GROUPE) WHERE i.IDCLASSE = :idclasse 
+
+Time : 21:27:04
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'n2.GROUPE = n.GROUPE)' at line 1
+Raw SQL : SELECT COUNT(i.IDINSCRIPTION) AS NBRE FROM inscription i INNER JOIN classes c ON c.IDCLASSE = i.IDCLASSE AND i.IDCLASSE = :idclasseINNER JOIN niveau n ON c.NIVEAU = n.IDNIVEAU WHERE i.IDELEVE = :ideleve AND i.IDCLASSE IN (SELECT c2.IDCLASSE FROM classes c2 INNER JOIN niveau n2 ON n2.IDNIVEAU = c2.NIVEAUWHERE n2.GROUPE = n.GROUPE)
+
+Time : 21:25:38
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+Raw SQL : SELECT COUNT(i.IDINSCRIPTION) AS NBRE FROM inscription i INNER JOIN classes c ON c.IDCLASSE = i.IDCLASSE AND i.IDCLASSE = :idclasseINNER JOIN niveau n ON c.NIVEAU = n.IDNIVEAU WHERE i.IDELEVE = :ideleve AND i.IDCLASSE IN (SELECT c2.IDCLASSE FROM classes c2 LEFT JOIN niveau n2 ON n2.IDNIVEAU = c2.NIVEAU AND )
+
+Time : 21:08:20
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+Raw SQL : SELECT COUNT(i.IDINSCRIPTION) AS NBRE FROM inscription i INNER JOIN classes c ON c.IDCLASSE = i.IDCLASSE AND i.IDCLASSE = :idclasseINNER JOIN niveau n ON c.NIVEAU = n.IDNIVEAU WHERE i.IDELEVE = :ideleve AND i.IDCLASSE IN (SELECT c2.IDCLASSE FROM classes c2 LEFT JOIN niveau n2 ON n2.IDNIVEAU = c2.NIVEAU AND )
+
+Time : 21:01:59
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+Raw SQL : SELECT COUNT(i.IDINSCRIPTION) AS NBRE FROM inscription i INNER JOIN classes c ON c.IDCLASSE = i.IDCLASSE AND i.IDCLASSE = :idclasseINNER JOIN niveau n ON c.NIVEAU = n.IDNIVEAU WHERE i.IDELEVE = :ideleve AND i.IDCLASSE IN (SELECT c2.IDCLASSE FROM classes c2 LEFT JOIN niveau n2 ON n2.IDNIVEAU = c2.NIVEAU AND )
+
+Time : 13:26:17
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.GROUPE' in 'on clause'
+Raw SQL : SELECT e.IDELEVE FROM eleves e, niveau nINNER JOIN classes c ON c.IDCLASSE = :idclasse AND c.ANNEEACADEMIQUE = :anneeacad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) = 1 AND c.IDCLASSE IN (SELECT c2.IDCLASSE FROM classes c2 INNER JOIN niveau n2 ON n2.IDNIVEAU = c2.NIVEAU AND n2.GROUPE = n.GROUPE) AND n.IDNIVEAU = c.NIVEAU
+
+Time : 13:25:08
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.GROUPE' in 'on clause'
+Raw SQL : SELECT e.IDELEVE FROM eleves e INNER JOIN classes c ON c.IDCLASSE = :idclasse AND c.ANNEEACADEMIQUE = :anneeacad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE INNER JOIN niveau n ON n.IDNIVEAU = c.NIVEAU WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) = 1 AND c.IDCLASSE IN (SELECT c2.IDCLASSE FROM classes c2 INNER JOIN niveau n2 ON n2.IDNIVEAU = c2.NIVEAU AND n2.GROUPE = n.GROUPE)
+
+Time : 13:24:33
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'niveau n2 ON n2.IDNIVEAU = c2.NIVEAU AND n2.GROUPE = n.GROUPE)' at line 1
+Raw SQL : SELECT e.IDELEVE FROM eleves e INNER JOIN classes c ON c.IDCLASSE = :idclasse AND c.ANNEEACADEMIQUE = :anneeacad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE INNER JOIN niveau n ON n.IDNIVEAU = c.NIVEAU WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) = 1 AND c.IDCLASSE IN (SELECT c2.IDCLASSE FROM classes c2 INNER niveau n2 ON n2.IDNIVEAU = c2.NIVEAU AND n2.GROUPE = n.GROUPE)
+
+Time : 13:09:27
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND c.ANNEEACADEMIQUE = ? INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND ' at line 1
+Raw SQL : SELECT e.*, c.* FROM eleves e INNER JOIN classes c ON AND c.ANNEEACADEMIQUE = :anneeacad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) > 1
+
+Time : 11:57:07
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND c.ANNEEACADEMIQUE = ? INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND ' at line 1
+Raw SQL : SELECT e.*, c.* FROM eleves e INNER JOIN classes c ON AND c.ANNEEACADEMIQUE = :anneeacad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) > 1
+
+Time : 10:44:41
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND c.ANNEEACADEMIQUE = ? INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND ' at line 1
+Raw SQL : SELECT e.*, c.* FROM eleves e INNER JOIN classes c ON AND c.ANNEEACADEMIQUE = :anneeacad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) > 1
+
+Time : 10:43:50
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND c.ANNEEACADEMIQUE = ? INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND ' at line 1
+Raw SQL : SELECT e.*, c.* FROM eleves e INNER JOIN classes c ON AND c.ANNEEACADEMIQUE = :anneeacad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) > 1
+
+Time : 10:43:09
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND c.ANNEEACADEMIQUE = ? INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND ' at line 1
+Raw SQL : SELECT e.*, c.* FROM eleves e INNER JOIN classes c ON AND c.ANNEEACADEMIQUE = :anneeacad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) > 1
+
+Time : 10:41:21
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT e.*, c.* FROM eleves e INNER JOIN classes c ON c.IDCLASSE = :idclasse AND c.ANNEEACADEMIQUE = :anneecad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) > 1
+
+Time : 10:40:57
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT e.*, c.* FROM eleves e INNER JOIN classes c ON c.IDCLASSE = :idclasse AND c.ANNEEACADEMIQUE = :anneecad INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.IDCLASSE = c.IDCLASSE AND i.ANNEEACADEMIQUE = c.ANNEEACADEMIQUE WHERE (SELECT COUNT(i2.IDINSCRIPTION) FROM inscription i2 WHERE i2.IDELEVE = i.IDELEVE AND i2.IDCLASSE = c.IDCLASSE) > 1
+
+Time : 07:36:23
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT i.ANNEEACADEMIQUE AS NBRE FROM inscription i WHERE i.IDELEVE = :ideleve ORDER BY i.ANNEEACADEMIQUE
+
+Time : 00:17:38
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'IDRESPONSABLELEVE' in 'where clause'
+Raw SQL : SELECT re.*, r.*, p.* FROM `responsable_eleve` re LEFT JOIN responsables r ON r.IDRESPONSABLE = re.IDRESPONSABLE LEFT JOIN parente p ON p.LIBELLE = re.PARENTE WHERE  IDRESPONSABLELEVE = :IDRESPONSABLELEVE 
+
+Time : 00:16:03
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'IDRESPONSABLELEVE' in 'where clause'
+Raw SQL : SELECT re.*, r.*, p.* FROM `responsable_eleve` re LEFT JOIN responsables r ON r.IDRESPONSABLE = re.IDRESPONSABLE LEFT JOIN parente p ON p.LIBELLE = re.PARENTE WHERE  IDRESPONSABLELEVE = :IDRESPONSABLELEVE 

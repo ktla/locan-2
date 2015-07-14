@@ -1,0 +1,19 @@
+Time : 23:57:11
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`eleves`, CONSTRAINT `eleves_ibfk_4` FOREIGN KEY (`MOTIFSORTIE`) REFERENCES `motifsortie` (`IDMOTIF`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `eleves` SET  matricule = :matricule, nom = :nom, prenom = :prenom, autrenom = :autrenom, sexe = :sexe, photo = :photo, cni = :cni, nationalite = :nationalite, datenaiss = :datenaiss, paysnaiss = :paysnaiss, lieunaiss = :lieunaiss, dateentree = :dateentree, provenance = :provenance, redoublant = :redoublant, datesortie = :datesortie, motifsortie = :motifsortie  WHERE  IDELEVE = :IDELEVE
+
+Time : 23:46:36
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`eleves`, CONSTRAINT `eleves_ibfk_4` FOREIGN KEY (`MOTIFSORTIE`) REFERENCES `motifsortie` (`IDMOTIF`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `eleves` SET  matricule = :matricule, nom = :nom, prenom = :prenom, autrenom = :autrenom, sexe = :sexe, photo = :photo, cni = :cni, nationalite = :nationalite, datenaiss = :datenaiss, paysnaiss = :paysnaiss, lieunaiss = :lieunaiss, dateentree = :dateentree, provenance = :provenance, redoublant = :redoublant, datesortie = :datesortie, motifsortie = :motifsortie  WHERE  IDELEVE = :IDELEVE
+
+Time : 23:46:09
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`eleves`, CONSTRAINT `eleves_ibfk_4` FOREIGN KEY (`MOTIFSORTIE`) REFERENCES `motifsortie` (`IDMOTIF`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `eleves` SET  matricule = :matricule, nom = :nom, prenom = :prenom, autrenom = :autrenom, sexe = :sexe, photo = :photo, cni = :cni, nationalite = :nationalite, datenaiss = :datenaiss, paysnaiss = :paysnaiss, lieunaiss = :lieunaiss, dateentree = :dateentree, provenance = :provenance, redoublant = :redoublant, datesortie = :datesortie, motifsortie = :motifsortie  WHERE  IDELEVE = :IDELEVE
+
+Time : 09:22:53
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`eleves`, CONSTRAINT `eleves_ibfk_6` FOREIGN KEY (`NATIONALITE`) REFERENCES `pays` (`IDPAYS`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `eleves` SET  matricule = :matricule, nom = :nom, prenom = :prenom, autrenom = :autrenom, sexe = :sexe, photo = :photo, cni = :cni, nationalite = :nationalite, datenaiss = :datenaiss, lieunaiss = :lieunaiss, paysnaiss = :paysnaiss, dateentree = :dateentree, provenance = :provenance, redoublant = :redoublant  WHERE  IDELEVE = :IDELEVE
+
+Time : 09:16:33
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`eleves`, CONSTRAINT `eleves_ibfk_1` FOREIGN KEY (`NATIONALITE`) REFERENCES `pays` (`PAYS`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : INSERT INTO eleves(MATRICULE, NOM, PRENOM, AUTRENOM, SEXE, PHOTO, CNI, NATIONALITE, DATENAISS, LIEUNAISS, PAYSNAISS, DATEENTREE, PROVENANCE, REDOUBLANT) VALUE(:matricule, :nom, :prenom, :autrenom, :sexe, :photo, :cni, :nationalite, :datenaiss, :lieunaiss, :paysnaiss, :dateentree, :provenance, :redoublant)

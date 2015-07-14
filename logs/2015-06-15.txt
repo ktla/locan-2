@@ -1,0 +1,11 @@
+Time : 20:44:05
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`justifications`, CONSTRAINT `justifications_ibfk_1` FOREIGN KEY (`PRESENCE`) REFERENCES `presences` (`IDPRESENCE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  justifications( PRESENCE, MOTIF, DESCRIPTION, ANNEEACADEMIQUE) VALUES(:presence,:motif,:description,:anneeacademique)
+
+Time : 20:43:29
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`justifications`, CONSTRAINT `justifications_ibfk_1` FOREIGN KEY (`PRESENCE`) REFERENCES `presences` (`IDPRESENCE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  justifications( PRESENCE, MOTIF, DESCRIPTION, ANNEEACADEMIQUE) VALUES(:presence,:motif,:description,:anneeacademique)
+
+Time : 20:43:01
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`justifications`, CONSTRAINT `justifications_ibfk_1` FOREIGN KEY (`PRESENCE`) REFERENCES `presences` (`IDPRESENCE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  justifications( PRESENCE, MOTIF, DESCRIPTION, ANNEEACADEMIQUE) VALUES(:presence,:motif,:description,:anneeacademique)

@@ -1,0 +1,27 @@
+Time : 15:25:07
+SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'IDAPPEL' in where clause is ambiguous
+Raw SQL : SELECT p.*, e.*, a.* FROM `presences` p LEFT JOIN appels a ON a.IDAPPEL = p.IDAPPEL LEFT JOIN eleves e ON e.IDELEVE = p.IDELEVE WHERE  IDAPPEL = :IDAPPEL
+
+Time : 14:48:36
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`appels`, CONSTRAINT `appels_ibfk_2` FOREIGN KEY (`IDMATIERE`) REFERENCES `matieres` (`IDMATIERE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  appels( IDCLASSE, IDMATIERE, IDEMPLOIS, DATEJOUR, HEUREDEBUT, HEUREFIN, REALISERPAR) VALUES(:idclasse,:idmatiere,:idemplois,:datejour,:heuredebut,:heurefin,:realiserpar)
+
+Time : 13:53:43
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.IDAPPEL' at line 1
+Raw SQL : SELECT p.*, e.*, a.* FROM `presences` p LEFT JOIN appels a ON a.IDAPPEL = p.IDAPPEL LEFT JOIN eleves e ON e.IDELEVE = p.IDELEVE WHERE  p.IDAPPEL = :p.IDAPPEL
+
+Time : 13:52:44
+SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'IDAPPEL' in where clause is ambiguous
+Raw SQL : SELECT p.*, e.*, a.* FROM `presences` p LEFT JOIN appels a ON a.IDAPPEL = p.IDAPPEL LEFT JOIN eleves e ON e.IDELEVE = p.IDELEVE WHERE  IDAPPEL = :IDAPPEL
+
+Time : 09:42:36
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`appels`, CONSTRAINT `appels_ibfk_4` FOREIGN KEY (`REALISERPAR`) REFERENCES `personnels` (`IDPERSONNEL`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  appels( IDELEVE, DATEJOUR, ETAT, EXCLU, IDCLASSE, IDMATIERE, HORAIRE, REALISERPAR) VALUES(:ideleve,:datejour,:etat,:exclu,:idclasse,:idmatiere,:horaire,:realiserpar)
+
+Time : 09:41:26
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`appels`, CONSTRAINT `appels_ibfk_3` FOREIGN KEY (`IDMATIERE`) REFERENCES `matieres` (`IDMATIERE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  appels( IDELEVE, DATEJOUR, ETAT, EXCLU, IDCLASSE, IDMATIERE, HORAIRE, REALISERPAR) VALUES(:ideleve,:datejour,:etat,:exclu,:idclasse,:idmatiere,:horaire,:realiserpar)
+
+Time : 09:16:38
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`appels`, CONSTRAINT `appels_ibfk_1` FOREIGN KEY (`IDELEVE`) REFERENCES `eleves` (`IDELEVE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  appels() VALUES()

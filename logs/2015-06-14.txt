@@ -1,0 +1,19 @@
+Time : 21:04:27
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`scolarites`, CONSTRAINT `scolarites_ibfk_1` FOREIGN KEY (`ELEVE`) REFERENCES `eleves` (`IDELEVE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  scolarites( ELEVE, FRAIS, MONTANT, DATEPAYEMENT, ANNEEACADEMIQUE, REALISERPAR) VALUES(:eleve,:frais,:montant,:datepayement,:anneeacademique,:realiserpar)
+
+Time : 21:03:45
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`scolarites`, CONSTRAINT `scolarites_ibfk_1` FOREIGN KEY (`ELEVE`) REFERENCES `eleves` (`IDELEVE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  scolarites( ELEVE, FRAIS, MONTANT, DATEPAYEMENT, ANNEEACADEMIQUE, REALISERPAR) VALUES(:eleve,:frais,:montant,:datepayement,:anneeacademique,:realiserpar)
+
+Time : 20:29:54
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT f.* FROM frais f INNER JOIN inscription i ON i.IDELEVE = :ideleve AND i.IDCLASSE = f.CLASSE AND i.ANNEEACADEMIQUE = :anneacad ORDER BY f.ECHEANCES
+
+Time : 20:29:12
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'f.ECHEANCES' at line 1
+Raw SQL : SELECT f.* FROM frais f INNER JOIN inscription i ON i.IDELEVE = :ideleve AND i.IDCLASSE = f.CLASSE AND i.ANNEEACADEMIQUE = :anneacad ORDER f.ECHEANCES
+
+Time : 10:00:22
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`frais`, CONSTRAINT `frais_ibfk_1` FOREIGN KEY (`CLASSE`) REFERENCES `classes` (`IDCLASSE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : UPDATE `frais` SET  DESCRIPTION = :DESCRIPTION, CLASSE = :CLASSE, ECHEANCES = :ECHEANCES, MONTANT = :MONTANT  WHERE  IDFRAIS = :IDFRAIS

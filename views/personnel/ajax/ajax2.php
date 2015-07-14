@@ -1,0 +1,1 @@
+<?php echo $total . " membres du personnel";

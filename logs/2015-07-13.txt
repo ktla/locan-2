@@ -1,0 +1,51 @@
+Time : 22:25:26
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '* FROM notes n INNER JOIN notations not ON not.IDNOTATION = n.NOTATION  AND not.' at line 1
+Raw SQL : SELECT n.*, not.* FROM notes n INNER JOIN notations not ON not.IDNOTATION = n.NOTATION  AND not.ENSEIGNEMENT = :idenseignement AND not.SEQUENCE = :sequence WHERE n.ELEVE = :ideleve
+
+Time : 21:42:21
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : SELECT ens.*, mat.*, prof.*, g.DESCRIPTION AS GROUPELIBELLE FROM enseignements ens INNER JOIN matieres mat ON mat.IDMATIERE = ens.MATIERE INNER JOIN personnels prof ON prof.IDPERSONNEL = ens.PROFESSEUR INNER JOIN groupe g ON g.IDGROUPE = ens.GROUPE WHERE ens.CLASSE = :idclasse
+
+Time : 17:03:17
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.ORDRE' in 'order clause'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, t.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY t.ORDRE
+
+Time : 16:59:43
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.ORDRE' in 'order clause'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, t.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY t.ORDRE
+
+Time : 16:59:32
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ORDRE' in 'order clause'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, t.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY ORDRE
+
+Time : 16:59:02
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.LIBELLE' in 'field list'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY ORDRE
+
+Time : 16:58:42
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.LIBELLE' in 'field list'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY ORDRE
+
+Time : 16:58:40
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.LIBELLE' in 'field list'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY ORDRE
+
+Time : 16:58:08
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.LIBELLE' in 'field list'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY ORDRE
+
+Time : 16:58:01
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.LIBELLE' in 'field list'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY ORDRE
+
+Time : 16:57:13
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.LIBELLE' in 'field list'
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY ORDRE
+
+Time : 16:56:28
+SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 ORDER BY s.ORDRE ASC UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY t.ORDRE
+
+Time : 16:56:10
+SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY
+Raw SQL : SELECT CONCAT('S', '_', s.IDSEQUENCE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM sequences s INNER JOIN trimestres t ON t.IDTRIMESTRE = s.TRIMESTRE AND t.PERIODE = :anneeacad1 ORDER BY s.ORDRE ASC UNION SELECT CONCAT('T', '_', t.IDTRIMESTRE) AS IDPERIODE, s.LIBELLE AS LIBELLE FROM trimestres t WHERE t.PERIODE = :anneeacad2 ORDER BY t.ORDRE

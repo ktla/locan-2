@@ -1,0 +1,15 @@
+Time : 14:14:02
+SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+Raw SQL : INSERT INTO personnels(IDPERSONNEL, CIVILITE, NOM, PRENOM, AUTRENOM, FONCTION, GRADE, DATENAISS, PORTABLE, TELEPHONE) VALUE(:id, :civilite, :nom, :prenom, :autrenom, :fonction, :grade, :datenaiss, :portable, :telephone)
+
+Time : 12:06:10
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*), CONCAT(e.MATRICULE, ' - ', e.NOM, ' ', e.PRENOM) AS CNOM, p.ETABLISSEMENT AS' at line 1
+Raw SQL : SELECT DISTINCT(e.*), CONCAT(e.MATRICULE, ' - ', e.NOM, ' ', e.PRENOM) AS CNOM, p.ETABLISSEMENT AS FK_PROVENANCE, m.LIBELLE AS FK_MOTIFSORTIE, p2.PAYS AS FK_NATIONALITE, p3.PAYS AS FK_PAYSNAISS, c.*, c.LIBELLE AS CLASSECOURANTE, n.* FROM eleves e LEFT JOIN etablissements p ON p.IDETABLISSEMENT = e.PROVENANCE LEFT JOIN motifsortie m ON m.IDMOTIF = e.MOTIFSORTIE LEFT JOIN pays p2 ON p2.IDPAYS = e.NATIONALITE LEFT JOIN pays p3 ON p3.IDPAYS = e.PAYSNAISS LEFT JOIN inscription i ON i.IDELEVE = e.IDELEVE LEFT JOIN  classes c ON c.IDCLASSE = i.IDCLASSE AND i.IDELEVE = e.IDELEVE AND c.ANNEEACADEMIQUE = :anneeacad LEFT JOIN niveau n ON n.IDNIVEAU = c.NIVEAU ORDER BY e.MATRICULE
+
+Time : 11:48:13
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'i.IDELEVE = e.IDELEVE LEFT JOIN  classes c ON c.IDCLASSE = i.IDCLASSE AND i.IDEL' at line 1
+Raw SQL : SELECT e.*, CONCAT(e.MATRICULE, ' - ', e.NOM, ' ', e.PRENOM) AS CNOM, p.ETABLISSEMENT AS FK_PROVENANCE, m.LIBELLE AS FK_MOTIFSORTIE, p2.PAYS AS FK_NATIONALITE, p3.PAYS AS FK_PAYSNAISS, c.*, c.LIBELLE AS CLASSECOURANTE FROM eleves e LEFT JOIN etablissements p ON p.IDETABLISSEMENT = e.PROVENANCE LEFT JOIN motifsortie m ON m.IDMOTIF = e.MOTIFSORTIE LEFT JOIN pays p2 ON p2.IDPAYS = e.NATIONALITE LEFT JOIN pays p3 ON p3.IDPAYS = e.PAYSNAISS LEFT JOIN inscription i i.IDELEVE = e.IDELEVE LEFT JOIN  classes c ON c.IDCLASSE = i.IDCLASSE AND i.IDELEVE = e.IDELEVE ORDER BY e.MATRICULE
+
+Time : 11:47:42
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER BY e.MATRICULE' at line 1
+Raw SQL : SELECT e.*, CONCAT(e.MATRICULE, ' - ', e.NOM, ' ', e.PRENOM) AS CNOM, p.ETABLISSEMENT AS FK_PROVENANCE, m.LIBELLE AS FK_MOTIFSORTIE, p2.PAYS AS FK_NATIONALITE, p3.PAYS AS FK_PAYSNAISS, c.*, c.LIBELLE AS CLASSECOURANTE FROM eleves e LEFT JOIN etablissements p ON p.IDETABLISSEMENT = e.PROVENANCE LEFT JOIN motifsortie m ON m.IDMOTIF = e.MOTIFSORTIE LEFT JOIN pays p2 ON p2.IDPAYS = e.NATIONALITE LEFT JOIN pays p3 ON p3.IDPAYS = e.PAYSNAISS LEFT JOIN inscription i LEFT JOIN  classes c ON c.IDCLASSE = i.IDCLASSE AND i.IDELEVE = e.IDELEVE ORDER BY e.MATRICULE

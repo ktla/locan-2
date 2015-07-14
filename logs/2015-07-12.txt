@@ -1,0 +1,27 @@
+Time : 00:40:22
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'INNER JOIN niveau ni ON ni.IDNIVEAU = c.NIVEAU' at line 1
+Raw SQL : SELECT n.*, c.*, c.LIBELLE AS CLASSELIBELLE, ni.*, s.LIBELLE AS SEQUENCELIBELLE FROM notations n INNER JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE AND n.SEQUENCE = :sequence INNER JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT AND e.MATIERE = :idmatiere INNER JOIN classes c ON c.IDCLASSE = e.CLASSE ORDER BY e.GROUPE INNER JOIN niveau ni ON ni.IDNIVEAU = c.NIVEAU
+
+Time : 00:39:58
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BYINNER JOIN niveau ni ON ni.IDNIVEAU = c.NIVEAU' at line 1
+Raw SQL : SELECT n.*, c.*, c.LIBELLE AS CLASSELIBELLE, ni.*, s.LIBELLE AS SEQUENCELIBELLE FROM notations n INNER JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE AND n.SEQUENCE = :sequence INNER JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT AND e.MATIERE = :idmatiere INNER JOIN classes c ON c.IDCLASSE = e.CLASSE ORDER BYINNER JOIN niveau ni ON ni.IDNIVEAU = c.NIVEAU
+
+Time : 00:39:42
+SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'c'
+Raw SQL : SELECT n.*, c.*, c.LIBELLE AS CLASSELIBELLE, ni.*, s.LIBELLE AS SEQUENCELIBELLE FROM notations n, classes c, niveau ni INNER JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE AND n.SEQUENCE = :sequence INNER JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT AND e.MATIERE = :idmatiere INNER JOIN classes c ON c.IDCLASSE = e.CLASSE ORDER BYINNER JOIN niveau ni ON ni.IDNIVEAU = c.NIVEAU
+
+Time : 00:39:21
+SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'c'
+Raw SQL : SELECT n.*, c.*, c.LIBELLE AS CLASSELIBELLE, ni.*, s.LIBELLE AS SEQUENCELIBELLE FROM notations n, classes c, niveau ni INNER JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE AND n.SEQUENCE = :sequenceINNER JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT AND e.MATIERE = :idmatiere INNER JOIN classes c ON c.IDCLASSE = e.CLASSE ORDER BYINNER JOIN niveau ni ON ni.IDNIVEAU = c.NIVEAU
+
+Time : 00:38:03
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'n.SEQUENCE' in 'on clause'
+Raw SQL : SELECT n.*, c.*, c.LIBELLE AS CLASSELIBELLE, ni.*, s.LIBELLE AS SEQUENCELIBELLE FROM notations n, classes c, niveau ni INNER JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE AND n.SEQUENCE = :sequenceINNER JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT AND e.MATIERE = :idmatiere WHERE c.IDCLASSE = e.CLASSE AND ni.IDNIVEAU = c.NIVEAU ORDER BY c.GROUPE
+
+Time : 00:35:52
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.GROUPE' in 'order clause'
+Raw SQL : SELECT n.*, c.*, c.LIBELLE AS CLASSELIBELLE, ni.*, s.LIBELLE AS SEQUENCELIBELLE FROM notations n INNER JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE AND n.SEQUENCE = :sequenceINNER JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT AND e.MATIERE = :idmatiere INNER JOIN classes c ON c.IDCLASSE = e.CLASSE INNER JOIN niveau ni ON ni.IDNIVEAU = c.NIVEAU ORDER BY c.GROUPE ASC
+
+Time : 00:34:39
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.GROUPE' in 'order clause'
+Raw SQL : SELECT n.*, c.*, c.LIBELLE AS CLASSELIBELLE, ni.*, s.LIBELLE AS SEQUENCELIBELLE FROM notations n INNER JOIN sequences s ON s.IDSEQUENCE = n.SEQUENCE AND n.SEQUENCE = :sequenceINNER JOIN enseignements e ON e.IDENSEIGNEMENT = n.ENSEIGNEMENT AND e.MATIERE = :idmatiere INNER JOIN classes c ON c.IDCLASSE = e.CLASSE INNER JOIN niveau ni ON ni.IDNIVEAU = c.NIVEAU ORDER BY c.GROUPE ASC

@@ -1,0 +1,7 @@
+Time : 20:59:47
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`responsables`, CONSTRAINT `responsables_ibfk_1` FOREIGN KEY (`CIVILITE`) REFERENCES `civilite` (`CIVILITE`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  responsables( CIVILITE, NOM, PRENOM, ADRESSE, BP, PORTABLE, TELEPHONE, EMAIL, PROFESSION, ACCEPTESMS, NUMSMS) VALUES(:civilite,:nom,:prenom,:adresse,:bp,:portable,:telephone,:email,:profession,:acceptesms,:numsms)
+
+Time : 13:15:32
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`responsable_eleve`, CONSTRAINT `responsable_eleve_ibfk_1` FOREIGN KEY (`IDRESPONSABLE`) REFERENCES `responsables` (`IDRESPONSABLE`) ON DELETE CASCADE ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  responsable_eleve( IDRESPONSABLE, IDELEVE, PARENTE, CHARGES) VALUES(:idresponsable,:ideleve,:parente,:charges)

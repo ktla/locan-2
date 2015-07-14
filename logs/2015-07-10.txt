@@ -1,0 +1,3 @@
+Time : 19:18:18
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`appels`, CONSTRAINT `appels_ibfk_3` FOREIGN KEY (`MODIFIERPAR`) REFERENCES `personnels` (`IDPERSONNEL`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `appels` SET  datemodif = :datemodif, modifierpar = :modifierpar  WHERE  IDAPPEL = :IDAPPEL

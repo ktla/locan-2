@@ -1,0 +1,7 @@
+Time : 14:23:43
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'j.*, j.REALISERPAR AS REALISERJ m.* FROM `presences` p LEFT JOIN eleves e ON e.I' at line 1
+Raw SQL : SELECT p.*, e.*, a.*, a.REALISERPAR AS REALISERA j.*, j.REALISERPAR AS REALISERJ m.* FROM `presences` p LEFT JOIN eleves e ON e.IDELEVE = p.IDELEVE LEFT JOIN appels a ON a.IDAPPEL = p.IDAPPEL LEFT JOIN matieres m ON m.IDMATIERE = a.IDMATIERE LEFT JOIN justifications j ON j.IDJUSTIFICATION = p.JUSTIFIER WHERE p.IDAPPEL = :idappel
+
+Time : 14:00:42
+SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 'p'
+Raw SQL : SELECT p.*, e.*, a.*, j.* FROM `presences` p LEFT JOIN eleves e ON e.IDELEVE = p.IDELEVE LEFT JOIN appels p ON a.IDAPPEL = p.IDAPPEL LEFT JOIN justifications j ON j.IDJUSTIFICATION = p.JUSTIFIER WHERE p.IDAPPEL = :idappel

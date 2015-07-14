@@ -1,0 +1,23 @@
+Time : 17:49:47
+SQLSTATE[42S02]: Base table or view not found: 1051 Unknown table 'a'
+Raw SQL : SELECT a.* FROM appels p WHERE p.IDCLASSE = :idclasse AND DATEJOUR = :datejour
+
+Time : 13:54:34
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`enseignements`, CONSTRAINT `enseignements_ibfk_1` FOREIGN KEY (`MATIERE`) REFERENCES `matieres` (`IDMATIERE`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `enseignements` SET  MATIERE = :MATIERE, PROFESSEUR = :PROFESSEUR, CLASSE = :CLASSE, GROUPE = :GROUPE, COEFF = :COEFF  WHERE  IDENSEIGNEMENT = :IDENSEIGNEMENT
+
+Time : 13:53:52
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`enseignements`, CONSTRAINT `enseignements_ibfk_1` FOREIGN KEY (`MATIERE`) REFERENCES `matieres` (`IDMATIERE`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `enseignements` SET  MATIERE = :MATIERE, PROFESSEUR = :PROFESSEUR, CLASSE = :CLASSE, GROUPE = :GROUPE, COEFF = :COEFF  WHERE  IDENSEIGNEMENT = :IDENSEIGNEMENT
+
+Time : 13:22:54
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`enseignements`, CONSTRAINT `enseignements_ibfk_1` FOREIGN KEY (`MATIERE`) REFERENCES `matieres` (`IDMATIERE`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : INSERT INTO  enseignements( MATIERE, PROFESSEUR, CLASSE, GROUPE, COEFF) VALUES(:MATIERE,:PROFESSEUR,:CLASSE,:GROUPE,:COEFF)
+
+Time : 13:08:13
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`classes_parametres`, CONSTRAINT `classes_parametres_ibfk_5` FOREIGN KEY (`RESPADMINISTRATIF`) REFERENCES `personnels` (`IDPERSONNEL`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `classes_parametres` SET  RESPADMINISTRATIF = :RESPADMINISTRATIF  WHERE  IDCLASSE = :IDCLASSE AND  ANNEEACADEMIQUE = :ANNEEACADEMIQUE
+
+Time : 13:05:09
+SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`locan`.`classes_parametres`, CONSTRAINT `classes_parametres_ibfk_5` FOREIGN KEY (`RESPADMINISTRATIF`) REFERENCES `personnels` (`IDPERSONNEL`) ON DELETE SET NULL ON UPDATE CASCADE)
+Raw SQL : UPDATE `classes_parametres` SET  RESPADMINISTRATIF = :RESPADMINISTRATIF  WHERE  IDCLASSE = :IDCLASSE AND  ANNEEACADEMIQUE = :ANNEEACADEMIQUE

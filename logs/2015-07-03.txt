@@ -1,0 +1,7 @@
+Time : 14:52:03
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'c.IDLASSE' in 'on clause'
+Raw SQL : SELECT e.*, c.*, n.* FROM eleves e INNER JOIN inscription i ON i.IDELEVE = e.IDELEVE AND i.ANNEEACADEMIQUE = :anneeacad INNER JOIN classes c ON c.IDLASSE = i.IDCLASSE INNER JOIN niveau n ON n.IDNIVEAU = c.NIVEAU WHERE c.IDCLASSE IN (SELECT p.CLASSE FROM enseignements p WHERE p.PROFESSEUR = :idprof)
+
+Time : 12:32:35
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM enseignements e INNER JOIN matieres m ON m.IDMATIERE = e.MATIERE INNER JOIN' at line 1
+Raw SQL : SELECT e.*, m.*, p.*, c.*, n.*, FROM enseignements e INNER JOIN matieres m ON m.IDMATIERE = e.MATIERE INNER JOIN personnels p ON p.IDPERSONNEL = e.PROFESSEUR INNER JOIN classes c ON c.IDCLASSE = e.CLASSE INNER JOIN niveau n ON c.NIVEAU = n.IDNIVEAU WHERE e.PROFESSEUR = :idpersonnel

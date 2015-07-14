@@ -1,0 +1,15 @@
+Time : 22:57:48
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'a.MATIERE' in 'on clause'
+Raw SQL : SELECT a.*, m.* FROM appels a INNER JOIN matieres m ON m.IDMATIERE = a.MATIERE WHERE a.CLASSE = :idclasse AND a.DATEJOUR = :datejour
+
+Time : 19:24:41
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY e.NOM' at line 1
+Raw SQL : SELECT a.*, e.*, ap.* FROM absences a LEFT JOIN eleves e ON a.ELEVE = e.IDELEVE INNER JOIN appels ap ON ap.IDAPPEL = a.APPEL AND (ap.DATEJOUR BETWEEN :datedebut AND :datefin) AND ap.CLASSE = :idclasse) ORDER BY e.NOM
+
+Time : 19:19:55
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE a.APPEL IN (SELECT p.IDAPPEL FROM appels p WHERE p.DATEJOUR BETWEEN ? AND ' at line 1
+Raw SQL : SELECT a.*, e.* FROM absences a LEFT JOIN eleves e ON a.ELEVE = e.IDELEVE ORDER BY e.NOM WHERE a.APPEL IN (SELECT p.IDAPPEL FROM appels p WHERE p.DATEJOUR BETWEEN :datedebut AND :datefin AND p.CLASSE = :idclasse)
+
+Time : 18:32:15
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'modifierpar' in 'field list'
+Raw SQL : UPDATE `appels` SET  datemodif = :datemodif, modifierpar = :modifierpar  WHERE  IDAPPEL = :IDAPPEL

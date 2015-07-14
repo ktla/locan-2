@@ -1,0 +1,1 @@
+<h1 style="text-align: center; color: #ff9900">Fonctionnalite non impl&eacute;ment&eacute;e</h1>
