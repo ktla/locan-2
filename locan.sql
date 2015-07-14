@@ -3,11 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
-<<<<<<< HEAD
--- Généré le :  Sam 11 Juillet 2015 à 15:17
-=======
--- Généré le :  Ven 10 Juillet 2015 à 19:30
->>>>>>> origin/master
+-- Généré le :  Mar 14 Juillet 2015 à 18:28
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -40,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `absences` (
   PRIMARY KEY (`IDABSENCE`),
   KEY `IDELEVE` (`ELEVE`),
   KEY `IDAPPEL` (`APPEL`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=107 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=102 ;
 
 --
 -- Contenu de la table `absences`
@@ -239,7 +235,7 @@ CREATE TABLE IF NOT EXISTS `classes` (
   KEY `DECOUPAGE` (`DECOUPAGE`),
   KEY `NIVEAU` (`NIVEAU`),
   KEY `classes_ibfk_2` (`ANNEEACADEMIQUE`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Contenu de la table `classes`
@@ -247,7 +243,8 @@ CREATE TABLE IF NOT EXISTS `classes` (
 
 INSERT INTO `classes` (`IDCLASSE`, `LIBELLE`, `DECOUPAGE`, `NIVEAU`, `ANNEEACADEMIQUE`) VALUES
 (1, 'Sixième', 1, 6, '2014-2015'),
-(2, 'Sixieme B', 1, 7, '2013-2014');
+(2, 'Sixieme B', 1, 7, '2013-2014'),
+(3, 'Terminale A', 1, 0, '2014-2015');
 
 -- --------------------------------------------------------
 
@@ -269,7 +266,7 @@ CREATE TABLE IF NOT EXISTS `classes_parametres` (
   KEY `CPEPRINCIPALE` (`CPEPRINCIPALE`),
   KEY `RESPADMINISTRATIF` (`RESPADMINISTRATIF`),
   KEY `ANNEEACADEMIQUE` (`ANNEEACADEMIQUE`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=59 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=60 ;
 
 --
 -- Contenu de la table `classes_parametres`
@@ -277,7 +274,8 @@ CREATE TABLE IF NOT EXISTS `classes_parametres` (
 
 INSERT INTO `classes_parametres` (`IDPARAMETRE`, `CLASSE`, `PROFPRINCIPALE`, `CPEPRINCIPALE`, `RESPADMINISTRATIF`, `ANNEEACADEMIQUE`) VALUES
 (57, 1, 3, 54, 3, NULL),
-(58, 2, 3, 54, 3, NULL);
+(58, 2, 3, 54, 3, NULL),
+(59, 3, 5, 53, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -318,11 +316,7 @@ CREATE TABLE IF NOT EXISTS `connexions` (
   `DATEFIN` datetime DEFAULT NULL,
   `DECONNEXION` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`IDCONNEXION`)
-<<<<<<< HEAD
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=153 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=146 ;
->>>>>>> origin/master
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=167 ;
 
 --
 -- Contenu de la table `connexions`
@@ -339,7 +333,6 @@ INSERT INTO `connexions` (`IDCONNEXION`, `COMPTE`, `DATEDEBUT`, `MACHINESOURCE`,
 (141, 'armel', '2015-07-10 08:12:23', 'PET-PC', '::1', 'Connexion réussie', '2015-07-10 09:12:45', 'Session expriée'),
 (142, 'armel', '2015-07-10 09:50:30', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
 (143, 'armel', '2015-07-10 11:10:47', 'PET-PC', '::1', 'Connexion réussie', '2015-07-10 14:56:27', 'Session expriée'),
-<<<<<<< HEAD
 (144, 'armel', '2015-07-10 14:24:38', 'PET-PC', '::1', 'Connexion réussie', '2015-07-10 18:31:26', 'Session fermée correctement'),
 (145, 'armel', '2015-07-10 15:40:15', 'PET-PC', '::1', 'Connexion réussie', '2015-07-10 16:40:22', 'Session expriée'),
 (146, 'armel', '2015-07-10 18:31:45', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
@@ -348,11 +341,21 @@ INSERT INTO `connexions` (`IDCONNEXION`, `COMPTE`, `DATEDEBUT`, `MACHINESOURCE`,
 (149, 'armel', '2015-07-11 00:56:01', 'PET-PC', '::1', 'Connexion réussie', '2015-07-11 02:00:00', 'Session expriée'),
 (150, 'armel', '2015-07-11 01:54:05', 'PET-PC', '::1', 'Connexion réussie', '2015-07-11 02:59:21', 'Session expriée'),
 (151, 'armel', '2015-07-11 02:06:06', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
-(152, 'armel', '2015-07-11 08:39:36', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', '');
-=======
-(144, 'armel', '2015-07-10 14:24:38', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
-(145, 'armel', '2015-07-10 15:40:15', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', '');
->>>>>>> origin/master
+(152, 'armel', '2015-07-11 08:39:36', 'PET-PC', '::1', 'Connexion réussie', '2015-07-11 10:09:20', 'Session expriée'),
+(153, 'armel', '2015-07-11 14:43:59', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
+(154, 'armel', '2015-07-11 15:01:56', 'PET-PC', '::1', 'Connexion réussie', '2015-07-11 16:48:46', 'Session expriée'),
+(155, 'armel', '2015-07-11 20:41:26', 'PET-PC', '::1', 'Connexion réussie', '2015-07-11 22:38:56', 'Session expriée'),
+(156, 'armel', '2015-07-11 21:18:02', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
+(157, 'armel', '2015-07-12 00:02:33', 'PET-PC', '::1', 'Connexion réussie', '2015-07-12 01:02:33', 'Session expriée'),
+(158, 'armel', '2015-07-12 06:47:38', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
+(159, 'armel', '2015-07-12 08:09:49', 'PET-PC', '::1', 'Connexion réussie', '2015-07-12 09:22:00', 'Session expriée'),
+(160, 'armel', '2015-07-13 07:16:12', 'PET-PC', '::1', 'Connexion réussie', '2015-07-13 08:16:59', 'Session expriée'),
+(161, 'armel', '2015-07-13 11:36:11', 'PET-PC', '::1', 'Connexion réussie', '2015-07-13 12:36:29', 'Session expriée'),
+(162, 'armel', '2015-07-13 16:17:24', 'PET-PC', '::1', 'Connexion réussie', '2015-07-13 18:19:18', 'Session expriée'),
+(163, 'armel', '2015-07-13 18:57:58', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
+(164, 'armel', '2015-07-13 23:31:09', 'PET-PC', '::1', 'Connexion réussie', '2015-07-14 02:41:34', 'Session expriée'),
+(165, 'armel', '2015-07-14 08:27:47', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', ''),
+(166, 'armel', '2015-07-14 16:32:57', 'PET-PC', '::1', 'Session en cours', '0000-00-00 00:00:00', '');
 
 -- --------------------------------------------------------
 
@@ -388,11 +391,7 @@ CREATE TABLE IF NOT EXISTS `droits` (
   `VERROUILLER` int(11) NOT NULL DEFAULT '0' COMMENT '0 = Ce droit n est pas verrouiller; 1 = verrouiller et donc inaccessible',
   PRIMARY KEY (`IDDROIT`),
   UNIQUE KEY `CODE` (`CODEDROIT`)
-<<<<<<< HEAD
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=97 ;
-=======
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=96 ;
->>>>>>> origin/master
 
 --
 -- Contenu de la table `droits`
@@ -469,18 +468,13 @@ INSERT INTO `droits` (`IDDROIT`, `CODEDROIT`, `LIBELLE`, `VERROUILLER`) VALUES
 (85, '514', 'Modification des matières', 0),
 (86, '515', 'Suppression des matières', 0),
 (88, '213', 'Consulter la liste d''appel de la semaine', 0),
-(89, '410', 'Afficher les statistiques des notes matières', 0),
+(89, '410', 'Afficher les statistiques des notes', 0),
 (90, '411', 'Fiche de report de notes de vierge', 0),
 (91, '606', 'Gestion des droits des utilisateurs', 0),
 (92, '323', 'Saisie de la liste d''appel de la semaine', 0),
 (93, '517', 'Modification des classes et ajout d''élèves dans une classe', 0),
 (94, '518', 'Suppression des classes et des élèves d''une classe', 0),
-<<<<<<< HEAD
-(95, '412', 'Afficher les statistiques des notes par classes', 0),
 (96, '324', 'Suppression d''une liste d''absence', 0);
-=======
-(95, '412', 'Afficher les statistiques des notes par classes', 0);
->>>>>>> origin/master
 
 -- --------------------------------------------------------
 
@@ -610,7 +604,7 @@ CREATE TABLE IF NOT EXISTS `enseignements` (
   KEY `PROFESSEUR` (`PROFESSEUR`),
   KEY `CLASSE` (`CLASSE`),
   KEY `GROUPE` (`GROUPE`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=67 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=78 ;
 
 --
 -- Contenu de la table `enseignements`
@@ -623,7 +617,18 @@ INSERT INTO `enseignements` (`IDENSEIGNEMENT`, `MATIERE`, `PROFESSEUR`, `CLASSE`
 (63, 19, 3, 1, 2, '4.0'),
 (64, 1, 3, 2, 1, '2.0'),
 (65, 17, 5, 2, 1, '2.0'),
-(66, 2, 1, 2, 2, '4.0');
+(66, 2, 1, 2, 2, '4.0'),
+(67, 1, 3, 3, 1, '4.0'),
+(68, 17, 3, 3, 1, '4.0'),
+(69, 2, 3, 3, 1, '2.0'),
+(70, 3, 3, 1, 1, '2.0'),
+(71, 5, 3, 1, 1, '2.0'),
+(72, 6, 3, 1, 2, '4.0'),
+(73, 10, 5, 1, 2, '4.0'),
+(74, 7, 5, 1, 2, '2.0'),
+(75, 9, 5, 1, 2, '1.0'),
+(76, 8, 3, 1, 3, '1.0'),
+(77, 15, 1, 1, 3, '1.0');
 
 -- --------------------------------------------------------
 
@@ -809,7 +814,7 @@ CREATE TABLE IF NOT EXISTS `inscription` (
   UNIQUE KEY `IDELEVE` (`IDELEVE`,`IDCLASSE`,`ANNEEACADEMIQUE`),
   KEY `IDCLASSE` (`IDCLASSE`),
   KEY `ANNEEACADEMIQUE` (`ANNEEACADEMIQUE`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=104 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=107 ;
 
 --
 -- Contenu de la table `inscription`
@@ -818,8 +823,8 @@ CREATE TABLE IF NOT EXISTS `inscription` (
 INSERT INTO `inscription` (`IDINSCRIPTION`, `IDELEVE`, `IDCLASSE`, `ANNEEACADEMIQUE`) VALUES
 (81, 25, 1, '2014-2015'),
 (82, 26, 1, '2014-2015'),
-(83, 27, 1, '2014-2015'),
-(84, 28, 1, '2014-2015'),
+(104, 27, 3, '2014-2015'),
+(105, 28, 3, '2014-2015'),
 (85, 29, 1, '2014-2015'),
 (86, 30, 1, '2014-2015'),
 (87, 31, 1, '2014-2015'),
@@ -839,7 +844,7 @@ INSERT INTO `inscription` (`IDINSCRIPTION`, `IDELEVE`, `IDCLASSE`, `ANNEEACADEMI
 (76, 55, 1, '2014-2015'),
 (72, 56, 1, '2014-2015'),
 (100, 58, 1, '2014-2015'),
-(101, 73, 1, '2014-2015'),
+(106, 73, 3, '2014-2015'),
 (74, 74, 1, '2014-2015'),
 (78, 74, 2, '2013-2014'),
 (102, 76, 1, '2014-2015'),
@@ -946,21 +951,21 @@ CREATE TABLE IF NOT EXISTS `matieres` (
   `LIBELLE` varchar(255) NOT NULL,
   `BULLETIN` varchar(150) NOT NULL COMMENT 'Libelle utiliser pour les impressions des bulletins',
   PRIMARY KEY (`IDMATIERE`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
 
 --
 -- Contenu de la table `matieres`
 --
 
 INSERT INTO `matieres` (`IDMATIERE`, `CODE`, `LIBELLE`, `BULLETIN`) VALUES
-(1, 'FR', 'Français', 'Français'),
+(1, 'FR', 'Français', 'Francais'),
 (2, 'ANG', 'Anglais', 'Anglais'),
 (3, 'H', 'Histoire', 'Histoire'),
 (4, 'G', 'Géographie', 'Géographie'),
 (5, 'ECM', 'Education Civique et Morale', 'ECM'),
-(6, 'MATHS-GEN', 'Mathématiques Générales', 'Mathématiques Générales'),
+(6, 'MATHS-GEN', 'Mathématiques Générales', 'Mathematiques Generales'),
 (7, 'PC-TECH', 'Phisique, Technologie et Chimie', 'Phisique, Techno. et Chimie'),
-(8, 'EPS', 'Education Physique et Sportive', 'Education Physique et Sportive'),
+(8, 'EPS', 'Education Physique et Sportive', 'E.P.S'),
 (9, 'INFO', 'Informatique', 'Informatique'),
 (10, 'SVT', 'Sciences de la vie et de la terre', 'ST/SVT'),
 (11, 'PHILO', 'Philosophie', 'Philosophie'),
@@ -972,9 +977,9 @@ INSERT INTO `matieres` (`IDMATIERE`, `CODE`, `LIBELLE`, `BULLETIN`) VALUES
 (17, 'ALL', 'Allemand', 'Allemand'),
 (18, 'ESP', 'Espagnol', 'Espagnol'),
 (19, 'COMM', 'Commerce', 'Commerce'),
-(20, 'COMPT', 'Comptabilité', 'Comptabilité'),
-(21, 'ECON-GEN', 'Economie Générale', 'Economie Générale'),
-(22, 'MATHS-APPL', 'Mathématiques Appliquées', 'Mathématiques Appliquées'),
+(20, 'COMPT', 'Comptabilité', 'Comptabilite'),
+(21, 'ECON-GEN', 'Economie Générale', 'Economie Generale'),
+(22, 'MATHS-APPL', 'Mathématiques Appliquées', 'Mathématiques Appliquees'),
 (23, 'STAT', 'Statistiques', 'Statistiques'),
 (24, 'OTA', 'Organisation du Travail Administratif', 'Organisation du Travail Administratif'),
 (25, 'EOE', 'Economie et organisation des Entreprises', 'Economie et organisation des Entreprises'),
@@ -984,8 +989,7 @@ INSERT INTO `matieres` (`IDMATIERE`, `CODE`, `LIBELLE`, `BULLETIN`) VALUES
 (29, 'OC-TCM', 'Outils et Communication', 'Outils et Communication'),
 (30, 'EE', 'Economie d''Entreprise', 'Economie d''Entreprise'),
 (31, 'GSI', 'Gestion des Systèmes Informatique', 'GSI'),
-(32, 'TPGSI', 'Travaux Pratiques GSI', 'Travaux Pratiques GSI'),
-(34, 'KILLME', 'éé _ ç àà', '');
+(32, 'TPGSI', 'Travaux Pratiques GSI', 'Travaux Pratiques GSI');
 
 -- --------------------------------------------------------
 
@@ -1005,7 +1009,7 @@ CREATE TABLE IF NOT EXISTS `menus` (
   PRIMARY KEY (`IDMENUS`),
   KEY `CODEDROIT` (`CODEDROIT`),
   KEY `IDGROUPE` (`IDGROUPE`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=58 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=57 ;
 
 --
 -- Contenu de la table `menus`
@@ -1032,7 +1036,7 @@ INSERT INTO `menus` (`IDMENUS`, `IDGROUPE`, `LIBELLE`, `HREF`, `ICON`, `CODEDROI
 (18, 3, 'Appel en salle', 'appel/saisie', 'appelsalle.png', '301', NULL, NULL),
 (19, 1, 'Déconnexion', 'connexion/disconnect', 'disconnect.png', '105', NULL, NULL),
 (20, 4, 'Saisie notes', 'note/saisie', 'addnote.png', '401', NULL, NULL),
-(21, 4, 'Récapitulatif des notes', 'note', 'recapitulatif.png', '402', NULL, NULL),
+(21, 4, 'Récapitulatif des notes', 'note/recapitulatif', 'recapitulatif.png', '402', NULL, NULL),
 (22, 4, 'Bilans bulletins', 'note/bilan', 'bilan.png', '403', NULL, NULL),
 (23, 2, 'Enseignants', 'enseignant', 'enseignant.png', '207', NULL, 'Gestion des enseignants'),
 (24, 3, 'Appel de la semaine', 'appel/liste', 'listeappel.png', '302', NULL, NULL),
@@ -1061,11 +1065,10 @@ INSERT INTO `menus` (`IDMENUS`, `IDGROUPE`, `LIBELLE`, `HREF`, `ICON`, `CODEDROI
 (50, 4, 'Verrouillage des notes', 'note/verrouillage', 'verrouillage.png', '408', NULL, NULL),
 (51, 6, 'Verrouillage des périodes', 'periode/verrouillage', 'verrouillage.png', '604', NULL, NULL),
 (52, 2, 'Appels', 'appel', 'appel.png', '213', NULL, NULL),
-(53, 4, 'Statistiques par matières', 'note/statistique/matieres', 'statistique.png', '410', NULL, NULL),
+(53, 4, 'Statistiques des notes', 'note/statistique', 'statistique.png', '410', NULL, NULL),
 (54, 4, 'Report de notes', 'note/report', 'report.png', '411', NULL, NULL),
 (55, 6, 'Droits utilisateurs', 'user/droit', 'droit.png', '606', NULL, NULL),
-(56, 3, 'Saisie appel semaine', 'appel/semaine', 'semaine.png', '323', NULL, NULL),
-(57, 4, 'Statistiques par classes', 'note/statistique/classes', 'statistique1.png', '412', NULL, NULL);
+(56, 3, 'Saisie appel semaine', 'appel/semaine', 'semaine.png', '323', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1138,6 +1141,7 @@ CREATE TABLE IF NOT EXISTS `notations` (
   `DESCRIPTION` varchar(150) NOT NULL,
   `NOTESUR` decimal(5,2) NOT NULL,
   `SEQUENCE` int(11) NOT NULL,
+  `DATEDEVOIR` date NOT NULL COMMENT 'Date a laquelle le devoir a ete fait',
   `DATEJOUR` date NOT NULL,
   `REALISERPAR` int(11) NOT NULL,
   `VERROUILLER` int(11) NOT NULL,
@@ -1146,14 +1150,18 @@ CREATE TABLE IF NOT EXISTS `notations` (
   KEY `TYPENOTE` (`TYPENOTE`),
   KEY `SEQUENCE` (`SEQUENCE`),
   KEY `REALISERPAR` (`REALISERPAR`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `notations`
 --
 
-INSERT INTO `notations` (`IDNOTATION`, `ENSEIGNEMENT`, `TYPENOTE`, `DESCRIPTION`, `NOTESUR`, `SEQUENCE`, `DATEJOUR`, `REALISERPAR`, `VERROUILLER`) VALUES
-(1, 60, 1, 'Devoir personnalisé', '20.00', 1, '2015-07-10', 1, 0);
+INSERT INTO `notations` (`IDNOTATION`, `ENSEIGNEMENT`, `TYPENOTE`, `DESCRIPTION`, `NOTESUR`, `SEQUENCE`, `DATEDEVOIR`, `DATEJOUR`, `REALISERPAR`, `VERROUILLER`) VALUES
+(2, 60, 1, 'Devoir personnalisé', '20.00', 1, '2015-07-07', '2015-07-11', 1, 0),
+(3, 67, 1, 'Devoir personnalisé', '20.00', 1, '2015-07-12', '2015-07-12', 1, 0),
+(4, 61, 2, 'Devoir harmonisé', '20.00', 1, '2015-07-13', '2015-07-13', 1, 0),
+(5, 60, 2, 'Devoir harmonisé', '20.00', 1, '2015-07-13', '2015-07-13', 1, 0),
+(6, 61, 1, 'Devoir personnalisé', '20.00', 1, '2015-07-13', '2015-07-13', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -1163,7 +1171,7 @@ INSERT INTO `notations` (`IDNOTATION`, `ENSEIGNEMENT`, `TYPENOTE`, `DESCRIPTION`
 
 CREATE TABLE IF NOT EXISTS `notes` (
   `IDNOTE` int(11) NOT NULL AUTO_INCREMENT,
-  `NOTE` decimal(5,2) NOT NULL,
+  `NOTE` decimal(5,2) DEFAULT NULL,
   `NOTATION` int(11) NOT NULL,
   `ELEVE` int(11) NOT NULL,
   `ABSENT` int(11) NOT NULL COMMENT '1 = Absent et 0 = present',
@@ -1171,19 +1179,131 @@ CREATE TABLE IF NOT EXISTS `notes` (
   PRIMARY KEY (`IDNOTE`),
   KEY `ELEVE` (`ELEVE`),
   KEY `NOTATION` (`NOTATION`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=100 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=125 ;
 
 --
 -- Contenu de la table `notes`
 --
 
 INSERT INTO `notes` (`IDNOTE`, `NOTE`, `NOTATION`, `ELEVE`, `ABSENT`, `OBSERVATION`) VALUES
-(1, '5.00', 1, 77, 0, ''),
-(2, '10.00', 1, 56, 0, ''),
-(3, '8.00', 1, 79, 1, ''),
-(4, '12.00', 1, 74, 0, ''),
-(5, '10.00', 1, 51, 0, ''),
-(6, '11.00', 1, 55, 0, '');
+(7, '12.00', 2, 81, 0, ''),
+(8, '10.00', 2, 74, 0, ''),
+(9, '9.00', 2, 82, 0, ''),
+(10, '10.00', 2, 77, 0, ''),
+(11, '15.00', 2, 25, 0, ''),
+(12, '13.00', 2, 26, 0, ''),
+(13, '15.00', 2, 27, 0, ''),
+(14, '18.00', 2, 28, 0, ''),
+(15, '15.50', 2, 29, 0, ''),
+(16, '12.00', 2, 30, 0, ''),
+(17, '5.00', 2, 31, 0, ''),
+(18, '0.00', 2, 32, 0, ''),
+(19, '2.50', 2, 33, 0, ''),
+(20, '0.00', 2, 34, 1, ''),
+(21, '10.00', 2, 35, 0, ''),
+(22, '8.00', 2, 37, 0, ''),
+(23, '9.00', 2, 38, 0, ''),
+(24, '5.00', 2, 39, 0, ''),
+(25, '2.00', 2, 40, 0, ''),
+(26, '2.00', 2, 47, 0, ''),
+(27, '10.00', 2, 48, 0, ''),
+(28, '12.00', 2, 50, 0, ''),
+(29, '13.00', 2, 51, 0, ''),
+(30, '15.00', 2, 53, 0, ''),
+(31, '16.00', 2, 55, 0, ''),
+(32, '15.00', 2, 56, 0, ''),
+(33, '12.00', 2, 58, 0, ''),
+(34, '13.00', 2, 73, 0, ''),
+(35, '10.00', 2, 76, 0, ''),
+(36, '9.00', 2, 78, 0, ''),
+(37, '7.00', 2, 79, 0, ''),
+(38, '15.00', 3, 27, 0, ''),
+(39, '12.00', 3, 28, 0, ''),
+(40, '10.00', 3, 73, 0, ''),
+(41, '14.00', 4, 81, 0, ''),
+(42, '12.00', 4, 74, 0, ''),
+(43, '9.00', 4, 82, 0, ''),
+(44, '3.00', 4, 77, 0, ''),
+(45, '2.00', 4, 25, 0, ''),
+(46, '5.00', 4, 26, 0, ''),
+(47, '10.00', 4, 29, 0, ''),
+(48, '15.00', 4, 30, 0, ''),
+(49, '19.00', 4, 31, 0, ''),
+(50, '12.00', 4, 32, 0, ''),
+(51, '13.00', 4, 33, 0, ''),
+(52, '15.50', 4, 34, 0, ''),
+(53, '16.00', 4, 35, 0, ''),
+(54, '18.00', 4, 37, 0, ''),
+(55, '2.00', 4, 38, 0, ''),
+(56, '10.00', 4, 39, 0, ''),
+(57, '5.00', 4, 40, 0, ''),
+(58, '2.50', 4, 47, 0, ''),
+(59, '6.00', 4, 48, 0, ''),
+(60, '1.00', 4, 50, 0, ''),
+(61, '10.00', 4, 51, 0, ''),
+(62, '12.00', 4, 53, 0, ''),
+(63, '1.75', 4, 55, 0, ''),
+(64, '12.75', 4, 56, 0, ''),
+(65, '13.00', 4, 58, 0, ''),
+(66, '3.00', 4, 76, 0, ''),
+(67, '5.50', 4, 78, 0, ''),
+(68, '6.50', 4, 79, 0, ''),
+(69, '10.00', 5, 81, 0, ''),
+(70, '12.00', 5, 74, 0, ''),
+(71, '15.00', 5, 82, 0, ''),
+(72, '15.50', 5, 77, 0, ''),
+(73, '16.00', 5, 25, 0, ''),
+(74, '9.00', 5, 26, 0, ''),
+(75, '10.00', 5, 29, 0, ''),
+(76, '11.00', 5, 30, 0, ''),
+(77, '12.00', 5, 31, 0, ''),
+(78, '13.00', 5, 32, 0, ''),
+(79, '15.00', 5, 33, 0, ''),
+(80, '18.00', 5, 34, 0, ''),
+(81, '12.00', 5, 35, 0, ''),
+(82, '13.00', 5, 37, 0, ''),
+(83, '18.00', 5, 38, 0, ''),
+(84, '10.00', 5, 39, 0, ''),
+(85, '9.00', 5, 40, 0, ''),
+(86, '8.00', 5, 47, 0, ''),
+(87, '7.00', 5, 48, 0, ''),
+(88, '7.50', 5, 50, 0, ''),
+(89, '3.00', 5, 51, 0, ''),
+(90, '0.00', 5, 53, 0, ''),
+(91, '12.00', 5, 55, 0, ''),
+(92, '15.00', 5, 56, 0, ''),
+(93, '18.00', 5, 58, 0, ''),
+(94, '6.00', 5, 76, 0, ''),
+(95, '9.00', 5, 78, 0, ''),
+(96, '8.00', 5, 79, 0, ''),
+(97, '15.00', 6, 81, 0, ''),
+(98, '10.00', 6, 74, 0, ''),
+(99, '11.00', 6, 82, 0, ''),
+(100, '10.00', 6, 77, 0, ''),
+(101, '12.00', 6, 25, 0, ''),
+(102, '3.00', 6, 26, 0, ''),
+(103, '4.00', 6, 29, 0, ''),
+(104, '15.00', 6, 30, 0, ''),
+(105, '12.00', 6, 31, 0, ''),
+(106, '1.00', 6, 32, 0, ''),
+(107, '11.00', 6, 33, 0, ''),
+(108, '3.00', 6, 34, 0, ''),
+(109, '13.00', 6, 35, 0, ''),
+(110, '18.00', 6, 37, 0, ''),
+(111, '15.00', 6, 38, 0, ''),
+(112, '16.00', 6, 39, 0, ''),
+(113, '13.00', 6, 40, 0, ''),
+(114, '14.00', 6, 47, 0, ''),
+(115, '12.00', 6, 48, 0, ''),
+(116, '15.00', 6, 50, 0, ''),
+(117, '12.00', 6, 51, 0, ''),
+(118, '13.00', 6, 53, 0, ''),
+(119, '12.00', 6, 55, 0, ''),
+(120, '11.00', 6, 56, 0, ''),
+(121, '10.50', 6, 58, 0, ''),
+(122, '5.00', 6, 76, 0, ''),
+(123, '5.50', 6, 78, 0, ''),
+(124, '6.00', 6, 79, 0, '');
 
 -- --------------------------------------------------------
 
@@ -1255,7 +1375,7 @@ CREATE TABLE IF NOT EXISTS `personnels` (
   KEY `CIVILITE` (`CIVILITE`),
   KEY `LOGIN` (`USER`),
   KEY `FONCTION` (`FONCTION`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
 
 --
 -- Contenu de la table `personnels`
@@ -1266,8 +1386,7 @@ INSERT INTO `personnels` (`IDPERSONNEL`, `MATRICULE`, `USER`, `CIVILITE`, `NOM`,
 (2, 'ADMIN2', 4, 'Mr', 'Ainam', 'Jean-paul', '', 3, '', '0000-00-00', '554125883', '125785475', 'jpainam@gmail.com', NULL),
 (3, 'ASSIST01', 5, 'Mlle', 'Estelle', 'Estelle', '', 1, '', '0000-00-00', '26585685', '54585166', 'assistant@yahoo.fr', NULL),
 (5, 'PERSO01', 2, 'Mr', 'Achillle', 'Avom', '', 1, '', '0000-00-00', '+237 673005451', '+237652289165', 'person@yahoo.fr', NULL),
-(6, '', NULL, 'Mr', 'ainam ', 'jean paul', '', 1, '', '2015-05-12', 'nrtjh', '', 'cebon@gyhahoo.fr', NULL),
-(8, '', NULL, 'Mr', 'evwerv', 'verve', 'vwerv', 1, 'vwerv', '0000-00-00', '658741325', '65754245', 'email@gmail.com', NULL);
+(6, '', NULL, 'Mr', 'Ainam ', 'Jean Paul', '', 1, '', '2015-07-07', '652289165', '', 'cebon@gyhahoo.fr', NULL);
 
 -- --------------------------------------------------------
 
@@ -1427,6 +1546,7 @@ CREATE TABLE IF NOT EXISTS `sequences` (
   `IDSEQUENCE` int(11) NOT NULL AUTO_INCREMENT,
   `TRIMESTRE` int(11) NOT NULL,
   `LIBELLE` varchar(30) NOT NULL,
+  `LIBELLEHTML` varchar(50) NOT NULL,
   `DATEDEBUT` date NOT NULL,
   `DATEFIN` date NOT NULL,
   `ORDRE` int(11) NOT NULL,
@@ -1439,13 +1559,13 @@ CREATE TABLE IF NOT EXISTS `sequences` (
 -- Contenu de la table `sequences`
 --
 
-INSERT INTO `sequences` (`IDSEQUENCE`, `TRIMESTRE`, `LIBELLE`, `DATEDEBUT`, `DATEFIN`, `ORDRE`, `VERROUILLER`) VALUES
-(1, 1, '1ère Séquence', '2014-09-01', '2014-10-01', 1, 0),
-(2, 1, '2nde Séquence', '2014-10-02', '2014-11-01', 2, 0),
-(3, 2, '3ème Séquence', '2014-11-02', '2014-12-01', 3, 0),
-(4, 2, '4ème Séquence', '0000-00-00', '0000-00-00', 4, 0),
-(5, 3, '5ème Séquence', '0000-00-00', '0000-00-00', 5, 0),
-(6, 3, '6ème Séquence', '2015-05-01', '2015-07-31', 6, 0);
+INSERT INTO `sequences` (`IDSEQUENCE`, `TRIMESTRE`, `LIBELLE`, `LIBELLEHTML`, `DATEDEBUT`, `DATEFIN`, `ORDRE`, `VERROUILLER`) VALUES
+(1, 1, '1ère Séquence', '1<sup>ère</sup> Séquence', '2014-09-01', '2014-10-01', 1, 0),
+(2, 1, '2nde Séquence', '2<sup>nde</sup> Séquence', '2014-10-02', '2014-11-01', 2, 0),
+(3, 2, '3ème Séquence', '3<sup>ème</sup> Séquence', '2014-11-02', '2014-12-01', 3, 0),
+(4, 2, '4ème Séquence', '4<sup>ème</sup> Séquence', '0000-00-00', '0000-00-00', 4, 0),
+(5, 3, '5ème Séquence', '5<sup>ème</sup> Séquence', '0000-00-00', '0000-00-00', 5, 0),
+(6, 3, '6ème Séquence', '6<sup>ème</sup> Séquence', '2015-05-01', '2015-07-31', 6, 0);
 
 -- --------------------------------------------------------
 
@@ -1539,11 +1659,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`IDUSER`, `LOGIN`, `PASSWORD`, `PROFILE`, `DROITSPECIFIQUE`, `ACTIF`) VALUES
-<<<<<<< HEAD
-(1, 'armel', '069a6a9ccaaca7967a0c43cb5e161187', 1, '["103","104","105","201","202","203","204","205","206","207","208","212","213","301","302","304","305","306","320","323","324","401","402","403","405","406","407","408","409","410","411","412","501","502","503","504","505","506","508","602","603","605","606"]', 1),
-=======
-(1, 'armel', '069a6a9ccaaca7967a0c43cb5e161187', 1, '["103","104","105","201","202","203","204","205","206","207","208","212","213","301","302","304","305","306","320","323","401","402","403","405","406","407","408","409","410","411","412","501","502","503","504","505","506","508","602","603","605","606"]', 1),
->>>>>>> origin/master
+(1, 'armel', '069a6a9ccaaca7967a0c43cb5e161187', 1, '["103","104","105","201","202","203","204","205","206","207","208","209","212","213","301","302","304","305","306","320","323","324","401","402","403","405","406","407","408","409","410","501","502","503","504","505","506","507","508","513","515","517","602","603","604","605","606"]', 1),
 (2, 'bruno', 'md5(''bruno'')', 1, '["301"]', 1),
 (3, 'estelle', 'md5(''estelle'')', 2, '["104","105","201"]', 1),
 (4, 'jp', '55add3d845bfcd87a9b0949b0da49c0a', 1, '["103","104","105","201","202","203","204","205","206","207","208","212","213","301","302","304","305","306","309","320","323","401","402","403","405","406","407","408","409","410","411","501","502","503","504","505","506","508","602","603","605","606"]', 1),
